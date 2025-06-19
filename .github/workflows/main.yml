@@ -1,0 +1,27 @@
+# setting up my first worflow
+name: my first workflow
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+  myFirstJob:
+    name: My first job
+    runs-on: ubuntu_latest
+    steps:
+      - run: |
+          echo "Hello ${{vars.WHO_TO_GREET}} from ${{github.actor}}"
+          echo "My secret is ${{secrets.MY_SECRET}}"
+          echo "The current branch is ${{github.ref}}"
+        
+      - name: checkout
+        uses: actions/checkout@v4.1.0
+      - run: tree
+      
+        
+        
+          c
+      
