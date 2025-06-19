@@ -1,0 +1,22 @@
+# practising my first github action
+name: my first workflow
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+  myFirstJob:
+    name: my first job
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          "echo Hello ${{WHO_TO_GREET}} from ${{github.actor}}"
+          "echo my secret is ${{MY_SECRET}}"
+          "echo The current branch is ${{github.ref}}"
+      - name: checkout
+      - uses: action/checkout@v4.1.0
+      - run: tree
+      
