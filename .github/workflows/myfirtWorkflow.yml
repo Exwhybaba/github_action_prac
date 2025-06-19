@@ -10,7 +10,7 @@ on:
 jobs:
   myFirstJob:
     name: My first job
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Hello ${{vars.WHO_TO_GREET}} from ${{github.actor}}"
